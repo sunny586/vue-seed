@@ -41,8 +41,8 @@ function Popup(options = {}) {
       },
       // 更新弹窗数据
       update(data) {
-        self.instance.data = data
-        self.instance.data = { ...self.instance.data }
+        self.instance.data = { ...self.instance.data, ...data }
+        // self.instance.data = { ...self.instance.data }
       },
       change(data) {
         if (typeof options.change === 'function') {
@@ -62,17 +62,11 @@ function Popup(options = {}) {
   document.body.appendChild(this.instance.$el)
 }
 // 打开
-Popup.prototype.open = function(data) {
-  // if (data !== undefined) {
-  //   this.instance.update(data || '')
-  // }
+Popup.prototype.open = function() {
   this.instance.open()
 }
 // 关闭
-Popup.prototype.close = function(data) {
-  // if (data !== undefined) {
-  //   this.instance.update(data || '')
-  // }
+Popup.prototype.close = function() {
   this.instance.close()
 }
 // 更新数据

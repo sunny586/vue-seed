@@ -53,14 +53,13 @@ export default {
     }
     // 加载picker的数据源
     this.loadData()
-    // this.loadPickerItems(this.val)
   },
   methods: {
     loadData() {
       this.loadPickerItems(this.val)
     },
     loadPickerItems(val) {
-      // this.list = []
+      this.list = []
       if (this.data && this.data.length > 0) {
         // 默认将data放到list中
         this.list.push(this.data)

@@ -8,7 +8,9 @@
       class="rl-item"
       tag="div"
     >
-      {{ item.name }}
+      <qzd-button>
+        {{ item.name }}
+      </qzd-button>
     </router-link>
   </div>
 </template>
@@ -20,6 +22,10 @@ export default {
   data() {
     return {
       list: [
+        {
+          path: '/eg/button',
+          name: 'button'
+        },
         {
           path: '/eg/indicator',
           name: 'indicator'
@@ -67,14 +73,7 @@ export default {
     margin-bottom: 12px;
   }
   .rl-item {
-    height: 36px;
-    line-height: 36px;
-    text-align: center;
-    font-size: 16px;
-    background-color: #427aff;
-    color: #fff;
-    border-radius: 2px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
 }
 </style>

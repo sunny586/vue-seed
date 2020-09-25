@@ -6,7 +6,6 @@ import '@/util/rem'
 // css
 import '@/styles/index.scss'
 import QzdUI from '@/qzd-ui'
-
 // import QzdUI from '../dist-qzd-ui/bundle'
 
 // productionTip

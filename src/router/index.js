@@ -82,6 +82,15 @@ const routes = [
           import(
             /* webpackChunkName: "eg" */ '@/views/eg/popup-select/index.vue'
           )
+      },
+      {
+        path: 'button',
+        name: 'eg-button',
+        meta: {
+          title: 'button组件'
+        },
+        component: () =>
+          import(/* webpackChunkName: "eg" */ '@/views/eg/button/index.vue')
       }
     ]
   }

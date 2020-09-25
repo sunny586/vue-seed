@@ -104,6 +104,13 @@ export default {
         return []
       }
     }
+  },
+  watch: {
+    data(val) {
+      this.popBottom.update({
+        list: val
+      })
+    }
   }
 }
 </script>

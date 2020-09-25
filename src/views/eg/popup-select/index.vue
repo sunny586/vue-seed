@@ -1,21 +1,18 @@
 <template>
   <div class="eg-popup-select">
-    <popup-select
+    <div>{{ JSON.stringify(list) }}</div>
+    <button @click="add()">添加</button>
+    <qzd-popup-select
       :data="list"
       v-model="text"
       placeholder="请选择公司"
       :options="options"
-    ></popup-select>
+    ></qzd-popup-select>
   </div>
 </template>
 
 <script>
-import PopupSelect from '@/qzd-ui/popup-select'
-
 export default {
-  components: {
-    PopupSelect
-  },
   data() {
     return {
       text: ['taobao'],
@@ -28,6 +25,11 @@ export default {
         value: 'code',
         label: 'name'
       }
+    }
+  },
+  methods: {
+    add() {
+      this.list.push({ name: '美团', code: 'meituan' })
     }
   }
 }
