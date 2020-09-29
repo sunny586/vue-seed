@@ -5,6 +5,7 @@ import store from './store'
 import '@/util/rem'
 // css
 import '@/styles/index.scss'
+import 'github-markdown-css'
 import QzdUI from '@/qzd-ui'
 // import QzdUI from '../dist-qzd-ui/bundle'
 

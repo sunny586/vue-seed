@@ -1,16 +1,16 @@
 <template>
   <div class="popup-select" @click="popupClick()">
-    <span v-if="typeof val === 'string' && val">{{ val }}</span>
-    <span v-else-if="typeof val === 'object' && val.length > 0">
+    <template v-if="typeof val === 'string' && val">{{ val }}</template>
+    <template v-else-if="typeof val === 'object' && val.length > 0">
       {{ cval }}
-    </span>
-    <span v-else> {{ placeholder }}</span>
+    </template>
+    <template v-else> {{ placeholder }}</template>
   </div>
 </template>
 
 <script>
 import popup from '../popup/index.js'
-import Tpl from './tpl'
+import Tpl from './tpl.vue'
 
 export default {
   model: {
@@ -105,6 +105,9 @@ export default {
       }
     }
   },
+  destroyed() {
+    this.popBottom.remove()
+  },
   watch: {
     data(val) {
       this.popBottom.update({
@@ -117,13 +120,11 @@ export default {
 
 <style lang="scss" scoped>
 .popup-select {
-  height: 44px;
-  line-height: 44px;
   font-size: 16px;
   text-align: right;
-  color: #888;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  height: 100%;
 }
 </style>

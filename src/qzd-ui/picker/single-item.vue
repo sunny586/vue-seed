@@ -74,15 +74,18 @@ export default {
           observeDOM: false
         }))
         this.sidx = this.getDefaultIdx(this.value)
-        wheel.on('scrollEnd', () => {
+        wheel.on('scrollEnd', pos => {
           //滚动完成之后获取当前选取的索引值
           const idx = wheel.getSelectedIndex()
-          this.sidx = idx
-          // 将数据回调给子组件
-          this.$emit('change', {
-            data: this.data[idx],
-            index: this.tabIndex
-          })
+          // 判断是否滚动，并发生了位移
+          if (idx !== this.sidx) {
+            this.sidx = idx
+            // 将数据回调给子组件
+            this.$emit('change', {
+              data: this.data[idx],
+              index: this.tabIndex
+            })
+          }
         })
       } else {
         this.wheels.refresh()

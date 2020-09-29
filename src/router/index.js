@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import EgLayout from '@/views/eg'
+import DocLayout from '@/views/eg/doc'
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "home" */ '../views/index.vue')
   },
+  // demo
   {
     path: '/eg',
     name: 'eg',
@@ -22,7 +24,8 @@ const routes = [
         path: 'toast',
         name: 'eg-toast',
         meta: {
-          title: 'toast组件'
+          title: 'Toast 提示框',
+          path: 'toast'
         },
         component: () =>
           import(/* webpackChunkName: "eg" */ '@/views/eg/toast/index.vue')
@@ -31,7 +34,8 @@ const routes = [
         path: 'indicator',
         name: 'eg-indicator',
         meta: {
-          title: 'indicator组件'
+          title: 'Indicator 加载指示框',
+          path: 'indicator'
         },
         component: () =>
           import(/* webpackChunkName: "eg" */ '@/views/eg/indicator/index.vue')
@@ -40,7 +44,8 @@ const routes = [
         path: 'scroll-y',
         name: 'eg-scroll-y',
         meta: {
-          title: 'scroll-y组件'
+          title: 'Scroll-Y 列表滑动',
+          path: 'scroll-y'
         },
         component: () =>
           import(/* webpackChunkName: "eg" */ '@/views/eg/scroll-y/index.vue')
@@ -49,7 +54,8 @@ const routes = [
         path: 'tab',
         name: 'eg-tab',
         meta: {
-          title: 'tab组件'
+          title: 'Tab 选项卡',
+          path: 'tab'
         },
         component: () =>
           import(/* webpackChunkName: "eg" */ '@/views/eg/tab/index.vue')
@@ -58,7 +64,8 @@ const routes = [
         path: 'popup',
         name: 'eg-popup',
         meta: {
-          title: 'popup组件'
+          title: 'popup 弹层',
+          path: 'popup'
         },
         component: () =>
           import(/* webpackChunkName: "eg" */ '@/views/eg/popup/index.vue')
@@ -67,7 +74,8 @@ const routes = [
         path: 'picker',
         name: 'eg-picker',
         meta: {
-          title: 'picker组件'
+          title: 'Picker 选择器',
+          path: 'picker'
         },
         component: () =>
           import(/* webpackChunkName: "eg" */ '@/views/eg/picker/index.vue')
@@ -76,7 +84,8 @@ const routes = [
         path: 'popup-select',
         name: 'eg-popup-select',
         meta: {
-          title: 'popup-select组件'
+          title: 'Popup-Select 弹层选择框',
+          path: 'popup-select'
         },
         component: () =>
           import(
@@ -87,12 +96,29 @@ const routes = [
         path: 'button',
         name: 'eg-button',
         meta: {
-          title: 'button组件'
+          title: 'Button 按钮',
+          path: 'button'
         },
         component: () =>
           import(/* webpackChunkName: "eg" */ '@/views/eg/button/index.vue')
+      },
+      {
+        path: 'cell',
+        name: 'eg-cell',
+        meta: {
+          title: 'Cell 单元格',
+          path: 'cell'
+        },
+        component: () =>
+          import(/* webpackChunkName: "eg" */ '@/views/eg/cell/index.vue')
       }
     ]
+  },
+  // 文档
+  {
+    path: '/doc/:id',
+    name: 'doc',
+    component: DocLayout
   }
 ]
 

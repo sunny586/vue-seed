@@ -24,35 +24,39 @@ export default {
       list: [
         {
           path: '/eg/button',
-          name: 'button'
+          name: 'Button 按钮'
         },
         {
           path: '/eg/indicator',
-          name: 'indicator'
+          name: 'Indicator 加载指示框'
         },
         {
           path: '/eg/toast',
-          name: 'toast'
+          name: 'Toast 提示框'
         },
         {
           path: '/eg/popup',
-          name: 'popup'
+          name: 'Popup 弹层'
         },
         {
           path: '/eg/scroll-y',
-          name: 'scroll-y'
+          name: 'Scroll-Y 列表滑动'
         },
         {
           path: '/eg/tab',
-          name: 'tab'
+          name: 'Tab 选项卡'
         },
         {
           path: '/eg/picker',
-          name: 'picker'
+          name: 'Picker 选择器'
         },
         {
           path: '/eg/popup-select',
-          name: 'popup-select'
+          name: 'Popup-Select 弹层选择框'
+        },
+        {
+          path: '/eg/cell',
+          name: 'Cell 单元格'
         }
       ]
     }

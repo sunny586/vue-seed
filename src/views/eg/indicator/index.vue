@@ -1,6 +1,6 @@
 <template>
   <div class="eg-indicator">
-    <button @click="indicator()">indicator</button>
+    <qzd-button @click="indicator()">Indicator 加载指示框</qzd-button>
   </div>
 </template>
 
@@ -20,19 +20,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.eg-indicator {
-  button {
-    display: block;
-    width: 100%;
-    color: #427aff;
-    border: 1px solid #427aff;
-    border-radius: 4px;
-    padding: 10px;
-    text-align: center;
-    background-color: #fff;
-    font-size: 16px;
-    outline: none;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

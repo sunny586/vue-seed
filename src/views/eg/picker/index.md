@@ -1,41 +1,20 @@
-<template>
-  <div class="eg-popup-select">
-    <div class="eg-block-title">单选</div>
-    <qzd-cell title="公司名称" required arrow>
-      <qzd-popup-select
-        :data="list"
-        v-model="text"
-        placeholder="请选择"
-        :options="options"
-      ></qzd-popup-select>
-    </qzd-cell>
-    <div class="eg-block-title">级联</div>
-    <qzd-cell title="公司名称" required arrow>
-      <qzd-popup-select
-        :data="list2"
-        v-model="text2"
-        placeholder="请选择"
-        :options="options"
-      ></qzd-popup-select>
-    </qzd-cell>
-  </div>
-</template>
+# Picker 选择器
 
-<script>
+### 代码演示
+
+> 使用方法：
+
+```html
+<qzd-picker :data="list" v-model="selected" :options="options"></qzd-picker>
+```
+
+```js
 export default {
+  components: {},
   data() {
     return {
-      text: ['taobao'],
+      selected: [],
       list: [
-        { name: '京东', code: 'jd' },
-        { name: '天猫', code: 'tianmao' },
-        { name: '淘宝', code: 'taobao' }
-      ],
-      options: {
-        value: 'code',
-        label: 'name'
-      },
-      list2: [
         {
           code: 'jd',
           name: '京东',
@@ -157,49 +136,22 @@ export default {
           ]
         }
       ],
-      text2: []
+      options: {
+        value: 'code',
+        label: 'name'
+      }
     }
   },
   methods: {}
 }
-</script>
+```
 
-<style lang="scss" scoped>
-.f-card {
-  display: flex;
-  height: 55px;
-  line-height: 55px;
-  padding-right: 16px;
-  border-bottom: 1px solid #ededed;
-  .f-k {
-    width: 120px;
-    font-size: 16px;
-    color: #0a0a17;
-    padding-left: 16px;
-  }
-  .f-v {
-    flex: 1;
-    font-size: 16px;
-    color: #0a0a17;
-    text-align: right;
-    position: relative;
-    outline: none;
-    border: none;
-    .f-txt {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: 225px;
-    }
-    .hy-arrow-right {
-      position: absolute;
-      top: 19px;
-      width: 10px;
-      right: -16px;
-    }
-  }
-  .red {
-    color: red;
-  }
-}
-</style>
+### API
+
+#### Attributes
+
+| 参数    | 说明       | 类型   |
+| ------- | ---------- | ------ |
+| data    | 数据源     | Array  |
+| v-model | 选中的数据 | Array  |
+| options | 配置项     | Object |

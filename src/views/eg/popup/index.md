@@ -1,3 +1,8 @@
+# popup 弹层
+
+### 代码演示
+
+```html
 <template>
   <div class="eg-popup">
     <qzd-button @click="testPopupTop()">top</qzd-button>
@@ -9,7 +14,10 @@
     <qzd-button @click="testPopupRight()">right</qzd-button>
   </div>
 </template>
-<script>
+```
+
+```js
+// test.vue
 import Test from './test'
 
 export default {
@@ -54,6 +62,60 @@ export default {
     this.popRight.remove()
   }
 }
-</script>
+```
 
-<style lang="scss" scoped></style>
+#### test.vue
+
+```html
+<template>
+  <div>
+    <div @click="haha()">haha</div>
+  </div>
+</template>
+```
+
+```js
+export default {
+  props: {
+    // 接收popup的实例对象
+    vm: {
+      type: Object
+    },
+    // 接收popup的传入数据
+    data: {
+      type: [Object, Array, String]
+    }
+  },
+  data() {
+    return {}
+  },
+  methods: {
+    haha() {
+      this.vm.close()
+    }
+  }
+}
+```
+
+### API
+
+#### 构造函数
+
+```js
+new this.$popup({
+  component: Test,
+  direction: 'top',
+  data: {}
+})
+```
+
+接收 3 个参数，component 是弹层的内容；direction 是弹层的方向（top,bottom,left.right）；data 是传入到自组件的数据。
+
+#### Methods
+
+| 方法名 | 说明      | 参数   |
+| ------ | --------- | ------ |
+| open   | 打开弹层  | －     |
+| close  | 关闭弹窗  | －     |
+| update | 更新 data | Object |
+| remove | 删除弹窗  | －     |

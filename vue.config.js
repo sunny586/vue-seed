@@ -123,6 +123,18 @@ module.exports = {
     config.resolve.alias
       .set('@', path.resolve(__dirname, './src'))
       .set('@public', path.resolve(__dirname, './public'))
+    // 配置md
+    config.module
+      .rule('md')
+      .test(/\.md$/)
+      .use('vue-loader')
+      .loader('vue-loader')
+      .end()
+      .use('vue-markdown-loader')
+      .loader('vue-markdown-loader/lib/markdown-compiler')
+      .options({
+        raw: true
+      })
   },
   lintOnSave: false, //关闭eslint
   devServer: {

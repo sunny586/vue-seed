@@ -6,6 +6,7 @@ import Popup from './popup/index.js'
 import Picker from './picker/index.vue'
 import PopupSelect from './popup-select/index.vue'
 import Button from './button/index.vue'
+import Cell from './cell/index.vue'
 
 const prefix = 'Qzd'
 
@@ -21,6 +22,7 @@ function UI(Vue, config = {}) {
   Vue.component(`${prefix}Picker`, Picker)
   Vue.component(`${prefix}PopupSelect`, PopupSelect)
   Vue.component(`${prefix}Button`, Button)
+  Vue.component(`${prefix}Cell`, Cell)
   // 挂载完成
   UI.installed = true
 }
