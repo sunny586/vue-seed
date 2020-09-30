@@ -1,6 +1,6 @@
 <template>
   <div class="doc">
-    <!-- <div class="top-header">
+    <div class="top-header" v-if="isWx">
       <svg viewBox="0 0 1000 1000" class="demo-nav__back" @click="goBack()">
         <path
           fill="#969799"
@@ -11,8 +11,11 @@
       <div class="th-title">
         {{ getTitle($route.params.id) }}
       </div>
-    </div> -->
-    <div class="markdown-body">
+    </div>
+    <div
+      class="markdown-body"
+      :style="`${isWx ? 'height:calc(100% - 44px);overflow: auto;' : ''}`"
+    >
       <button-markdown v-if="$route.params.id === 'button'"></button-markdown>
       <indicator-markdown v-if="$route.params.id === 'indicator'">
       </indicator-markdown>
@@ -38,6 +41,7 @@ import TabMarkdown from './tab/index.md'
 import PickerMarkdown from './picker/index.md'
 import PopupSelectMarkdown from './popup-select/index.md'
 import CellMarkdown from './cell/index.md'
+import { isWxEv } from '@/util/index.js'
 
 export default {
   components: {
@@ -52,7 +56,9 @@ export default {
     CellMarkdown
   },
   data() {
-    return {}
+    return {
+      isWx: isWxEv()
+    }
   },
   methods: {
     goBack() {
@@ -78,12 +84,13 @@ export default {
 
 <style lang="scss" scoped>
 .doc {
+  height: 100%;
   .top-header {
     height: 44px;
     line-height: 44px;
     display: flex;
     .demo-nav__back {
-      width: 36px;
+      width: 28px;
       display: block;
       position: relative;
       top: 50%;

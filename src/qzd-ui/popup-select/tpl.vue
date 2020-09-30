@@ -79,7 +79,7 @@ export default {
 
 <style lang="scss" scoped>
 .popup-select-tpl {
-  padding-bottom: 48px;
+  padding-bottom: 12px;
   border-radius: 8px;
   .top-btns {
     display: flex;

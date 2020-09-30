@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { isWxEv } from '@/util/index.js'
+
 export default {
   data() {
     return {}
@@ -24,10 +26,16 @@ export default {
       })
     },
     lookApi() {
-      const { href } = this.$router.resolve({
-        path: '/doc/' + this.$route.meta.path
-      })
-      window.open(href, '_blank')
+      if (isWxEv()) {
+        this.$router.push({
+          path: '/doc/' + this.$route.meta.path
+        })
+      } else {
+        const { href } = this.$router.resolve({
+          path: '/doc/' + this.$route.meta.path
+        })
+        window.open(href, '_blank')
+      }
     }
   }
 }

@@ -28,7 +28,9 @@ export default {
       list: [
         { name: '京东', code: 'jd' },
         { name: '天猫', code: 'tianmao' },
-        { name: '淘宝', code: 'taobao' }
+        { name: '淘宝', code: 'taobao' },
+        { name: '美团', code: 'meituan' },
+        { name: '淘票票', code: 'taopiaopiao' }
       ],
       options: {
         value: 'code',

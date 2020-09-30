@@ -122,7 +122,7 @@ export default {
     border-bottom: 1px solid #ddd;
   }
   .wheel-wrapper {
-    height: 100px;
+    height: 1.28rem;
     overflow: hidden;
     .wheel-scroller {
       margin-top: 34px;
